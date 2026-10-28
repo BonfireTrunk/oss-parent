@@ -470,7 +470,7 @@
                         <configuration>
                             <publishingServerId>central</publishingServerId>
                             <checksums>required</checksums>
-                            <waitUntil>published</waitUntil>
+                            <waitUntil>validated</waitUntil>
                             <autoPublish>true</autoPublish>
                             <deploymentName>${project.artifactId} ${project.version} deployment</deploymentName>
                         </configuration>
