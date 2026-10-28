@@ -6,7 +6,7 @@ Parent POM for the Bonfire Team's open source Java libraries.
 <parent>
     <groupId>today.bonfire.oss</groupId>
     <artifactId>bonfire-oss-parent</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
 </parent>
 ```
 
@@ -17,6 +17,7 @@ Parent POM for the Bonfire Team's open source Java libraries.
 - **`slf4j-api`** at compile scope.
 - **Test stack** at test scope: JUnit Jupiter, Mockito (with the inline mock maker loaded as a Java agent), AssertJ, and Logback.
 - **Sources and Javadoc jars** attached on every build.
+- **Formatting.** Local builds format Java sources with palantir-java-format through Spotless, so there is no separate step to run. CI sets `CI=true` and only checks, so unformatted code fails the build there. `./mvnw spotless:apply` formats without building.
 - **Release profiles.** `upload` signs with GPG and stages to Maven Central without publishing. `publish` signs, auto-publishes and waits until the release is live on Central.
 
 ## Managed but not inherited
