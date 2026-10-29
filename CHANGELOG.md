@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and versions follow [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+
+- `org.jspecify:jspecify` 1.0.1 is managed. A child declares it without a version to use JSpecify nullness annotations.
+
 ## [2.1.1] - 2026-10-29
 
 ### Added

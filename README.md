@@ -28,6 +28,7 @@ Declare these without a version in the child to use them:
 - `org.apache.commons:commons-lang3`
 - `com.google.guava:guava`
 - `org.jsoup:jsoup`
+- `org.jspecify:jspecify`
 - `org.jacoco:jacoco-maven-plugin` (add it under `<build><plugins>`, the agent and report executions come preconfigured)
 
 ## Contributing
