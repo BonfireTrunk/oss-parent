@@ -7,7 +7,7 @@
 
     <groupId>today.bonfire.oss</groupId>
     <artifactId>bonfire-oss-parent</artifactId>
-    <version>2.1.0</version>
+    <version>2.1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
@@ -431,7 +431,7 @@
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central</publishingServerId>
-                            <checksums>all</checksums>
+                            <checksums>required</checksums>
                             <waitUntil>uploaded</waitUntil>
                             <autoPublish>false</autoPublish>
                         </configuration>
@@ -469,8 +469,8 @@
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central</publishingServerId>
-                            <checksums>all</checksums>
-                            <waitUntil>published</waitUntil>
+                            <checksums>required</checksums>
+                            <waitUntil>validated</waitUntil>
                             <autoPublish>true</autoPublish>
                             <deploymentName>${project.artifactId} ${project.version} deployment</deploymentName>
                         </configuration>
