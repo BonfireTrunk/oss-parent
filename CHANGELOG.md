@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and versions follow [Semantic Versioning](https://semver.org/).
 
+## [2.1.1] - 2026-10-29
+
+### Added
+
+- Releases of this parent are also published to GitHub Packages, from the same signed files as Maven Central.
+
+### Changed
+
+- The `upload` and `publish` profiles send Maven Central only the checksums it requires (`.md5` and `.sha1`). A jar library release drops from 24 files to 16, which counts less toward Central's monthly publishing limits.
+- The `publish` profile waits only until Central has validated a release, not until it is published. Central still publishes it on its own after validation.
+
 ## [2.1.0] - 2026-10-28
 
 ### Added
