@@ -16,7 +16,7 @@ jobs:
     permissions:
       contents: write
       packages: write
-    uses: BonfireTrunk/.github/.github/workflows/maven-release.yml@prime
+    uses: BonfireTrunk/.github/.github/workflows/maven-release.yml@github-packages-fallback
     secrets:
       CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
       CENTRAL_TOKEN: ${{ secrets.CENTRAL_TOKEN }}
