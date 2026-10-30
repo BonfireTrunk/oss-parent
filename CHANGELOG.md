@@ -7,6 +7,18 @@ All notable changes to this project are documented here. The format follows [Kee
 ### Added
 
 - `org.jspecify:jspecify` 1.0.1 is managed. A child declares it without a version to use JSpecify nullness annotations.
+- Every jar gets an OSGi manifest from maven-bundle-plugin, plus `Automatic-Module-Name` when the child sets `module.name`. A child no longer needs its own maven-bundle-plugin and maven-jar-plugin setup for this.
+- `LICENSE` and `NOTICE` from the project root are packaged into the jar under `META-INF/`.
+- maven-failsafe-plugin is managed at Surefire's version, with the same test JVM settings. A child adds it with its `integration-test` and `verify` goals.
+- The Testcontainers BOM 2.0.5 is imported, so a child declares Testcontainers modules without a version.
+
+### Changed
+
+- maven-surefire-plugin 3.6.0 to 3.6.1.
+
+### Fixed
+
+- The opt-in JaCoCo plugin now records coverage. The Surefire setting that loads Mockito's agent replaced the agent JaCoCo adds, so no coverage data or report was written.
 
 ## [2.1.1] - 2026-10-29
 

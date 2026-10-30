@@ -17,6 +17,8 @@ Parent POM for the Bonfire Team's open source Java libraries.
 - **`slf4j-api`** at compile scope.
 - **Test stack** at test scope: JUnit Jupiter, Mockito (with the inline mock maker loaded as a Java agent), AssertJ, and Logback.
 - **Sources and Javadoc jars** attached on every build.
+- **OSGi and module manifest.** maven-bundle-plugin writes OSGi headers into every jar. A child that sets the `module.name` property also gets it as `Automatic-Module-Name`; without it, the header is left out.
+- **License in the jar.** `LICENSE` and `NOTICE` from the project root are packaged under `META-INF/`. A child that declares its own `<resources>` replaces this list, so it adds `src/main/resources` and the license files itself.
 - **Formatting.** Local builds format Java sources with palantir-java-format through Spotless, so there is no separate step to run. CI sets `CI=true` and only checks, so unformatted code fails the build there. `./mvnw spotless:apply` formats without building.
 - **Release profiles.** `upload` signs with GPG and stages to Maven Central without publishing. `publish` signs, uploads and waits only until Central has validated the release. Central then publishes it on its own, so it reaches Maven Central a little after the build ends.
 
@@ -29,7 +31,9 @@ Declare these without a version in the child to use them:
 - `com.google.guava:guava`
 - `org.jsoup:jsoup`
 - `org.jspecify:jspecify`
-- `org.jacoco:jacoco-maven-plugin` (add it under `<build><plugins>`, the agent and report executions come preconfigured)
+- Testcontainers modules (`org.testcontainers:*`), through the imported Testcontainers BOM
+- `org.apache.maven.plugins:maven-failsafe-plugin` (add it under `<build><plugins>` with the `integration-test` and `verify` goals; it shares Surefire's version and test JVM settings)
+- `org.jacoco:jacoco-maven-plugin` (add it under `<build><plugins>`, the agent and report executions come preconfigured; a child that sets its own Surefire or Failsafe `argLine` starts it with `@{argLine}` so the JaCoCo agent is kept)
 
 ## Contributing
 
