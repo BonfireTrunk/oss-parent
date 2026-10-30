@@ -12,4 +12,4 @@ concurrency:
 
 jobs:
   build:
-    uses: BonfireTrunk/.github/.github/workflows/maven-build.yml@prime
+    uses: BonfireTrunk/.github/.github/workflows/maven-build.yml@github-packages-fallback
