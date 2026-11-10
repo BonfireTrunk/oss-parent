@@ -2,7 +2,7 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and versions follow [Semantic Versioning](https://semver.org/).
 
-## [Unreleased]
+## [2.2.0] - 2026-11-10
 
 ### Added
 
@@ -15,6 +15,9 @@ All notable changes to this project are documented here. The format follows [Kee
 ### Changed
 
 - maven-surefire-plugin 3.6.0 to 3.6.1.
+- logback 1.6.5 to 1.6.6, Guava 33.7.2-jre to 33.8.0-jre and jsoup 1.23.2 to 1.24.1.
+- maven-enforcer-plugin 3.6.3 to 3.7.0. Its `requireReleaseDeps` rule now also rejects optional `-SNAPSHOT` dependencies.
+- versions-maven-plugin 2.23.0 to 2.25.1, jacoco-maven-plugin 0.8.15 to 0.8.16 and spotless-maven-plugin 3.10.4 to 3.11.0.
 
 ### Fixed
 
