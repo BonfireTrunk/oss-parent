@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and versions follow [Semantic Versioning](https://semver.org/).
 
+## [2.2.1] - 2026-11-17
+
+### Changed
+
+- commons-lang3 3.21.0 to 3.22.0 and logback 1.6.6 to 1.6.7.
+- versions-maven-plugin 2.25.1 to 2.25.2.
+
 ## [2.2.0] - 2026-11-10
 
 ### Added
